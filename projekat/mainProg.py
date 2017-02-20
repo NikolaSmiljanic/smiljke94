@@ -27,9 +27,9 @@ from skimage.morphology import *
 from skimage import color
 import numpy as np
 
-print("poc Prgo poc prggg")
+print("poc ")
 
-videoName="data/video-1.avi"
+videoName="data/video-4.avi"
 cap = cv2.VideoCapture(videoName)
 print (videoName)
 
@@ -109,6 +109,7 @@ def myFunct(cap):
     gray="grayFrame"  
     frame1="frame"
     kernel = np.ones((2,2),np.uint8)
+    
     i=0
     if i==0:
         i=i+1
@@ -117,6 +118,10 @@ def myFunct(cap):
             if ret:
                 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
                 #dodaj diletac i tu slike prosledi a ne greja
+                print("****************")
+                print("****************")
+                print("****************")
+                print("****************")
                 img0 = cv2.dilate(gray, kernel)
                 frame1=frame
 
@@ -158,6 +163,7 @@ def update2(img0):
     if videoName == "data/video-1.avi" :
         img0 = cv2.dilate(img0, kernel)
     if videoName == "data/video-5.avi" :
+       
         img0 = cv2.dilate(img0, kernel)
         img0 = cv2.dilate(img0, kernel)
     if videoName == "data/video-6.avi" :
@@ -369,8 +375,12 @@ def main():
             if (dxc > 11 or dyc > 11):
                
                 elem = {'center': (xc, yc), 'size': (dxc, dyc), 't': t}
+                k=19
+                if videoName == "data/video-5.avi" :
+                    k=20
                
-                lst = inRange(20, elem, elements)
+                
+                lst = inRange(k, elem, elements)
                 
                 nn = len(lst)
                 if nn == 0:
