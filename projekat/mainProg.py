@@ -9,12 +9,10 @@ from skimage.measure import regionprops
 import numpy as np
 import math
 from matplotlib.pyplot import cm
-from lineDetection  import *
 from Crypto.PublicKey.pubkey import pubkey
 from sklearn.datasets import fetch_mldata
 from matplotlib.pyplot import cm
 from skimage.measure import regionprops
-from main import *
 import matplotlib.pyplot as plt
 from skimage.morphology import *
 import itertools
